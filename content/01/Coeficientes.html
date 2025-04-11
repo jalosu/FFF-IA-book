@@ -1,0 +1,790 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Estudio matemático de las relaciones entre las dimensiones morfológicas y el peso &#8212; Casos prácticos de Inteligencia Artificial</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/01/Coeficientes';</script>
+    <link rel="icon" href="../../_static/logo.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Generador" href="Generador.html" />
+    <link rel="prev" title="Predicción del peso del lenguado a partir de variables morfológicas" href="Introduccion.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Casos prácticos de Inteligencia Artificial - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Casos prácticos de Inteligencia Artificial - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Casos prácticos de Inteligencia Artificial
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">FLATCLASS</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Introduccion.html">Predicción del peso del lenguado a partir de variables morfológicas</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Estudio matemático de las relaciones entre las dimensiones morfológicas y el peso</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Generador.html">Generador</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/jalosu/FFF-IA-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jalosu/FFF-IA-book/issues/new?title=Issue%20on%20page%20%2Fcontent/01/Coeficientes.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/01/Coeficientes.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Estudio matemático de las relaciones entre las dimensiones morfológicas y el peso</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#justificacion-matematica-y-biologica">Justificación matemática y biológica</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-modelos-peso-morfologia">Análisis de modelos peso - morfología</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-potencia-peso-longitud-w-a-cdot-l-b">1. Modelo potencia peso - longitud: <span class="math notranslate nohighlight">\(W=a\cdot L^b\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-potencia-peso-superficie-w-a-cdot-s-b">2. Modelo potencia peso - superficie: <span class="math notranslate nohighlight">\(W=a\cdot S^b\)</span></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="estudio-matematico-de-las-relaciones-entre-las-dimensiones-morfologicas-y-el-peso">
+<h1>Estudio matemático de las relaciones entre las dimensiones morfológicas y el peso<a class="headerlink" href="#estudio-matematico-de-las-relaciones-entre-las-dimensiones-morfologicas-y-el-peso" title="Link to this heading">#</a></h1>
+<section id="justificacion-matematica-y-biologica">
+<h2>Justificación matemática y biológica<a class="headerlink" href="#justificacion-matematica-y-biologica" title="Link to this heading">#</a></h2>
+<p>La relación entre la longitud y el peso en peces suele seguir la ley cúbica (<span class="math notranslate nohighlight">\(W\propto L^{3}\)</span>), pero en peces planos como el lenguado, la relación superficie-peso es más adecuada, ya que su cuerpo es achatado y su crecimiento no es isométrico. Los trabajos de <a class="reference external" href="https://doi.org/10.1111/j.1439-0426.2006.00805.x">[Froese et al., 2006]</a> y <a class="reference external" href="https://doi.org/10.1111/j.1751-5823.2012.00179_26.x">[Haddon et al., 2011]</a> pusieron de manifiesto que en peces planos existe una correlación entre el peso del individuo (<span class="math notranslate nohighlight">\(W\)</span>) y la superficie (<span class="math notranslate nohighlight">\(S\)</span>) del mismo que viene dada por la expresión matemática:</p>
+<div class="math notranslate nohighlight" id="equation-eq-peso-superficie">
+<span class="eqno">(1)<a class="headerlink" href="#equation-eq-peso-superficie" title="Link to this equation">#</a></span>\[W=aS^b\]</div>
+<p>en donde:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(a\)</span> es un coeficiente empírico que depende de la especie y las condiciones de cultivo.</p></li>
+<li><p><span class="math notranslate nohighlight">\(b\)</span> es un exponente que describe la tasa de crecimiento en función de la superficie.</p></li>
+</ul>
+<p>ya que la altura es menos predictiva que la longitud - anchura (L/A) que sólo contribuye <span class="math notranslate nohighlight">\(\sim5\%\)</span> en modelos morfológicos.</p>
+<p>Para obtener valores específicos de ay b, se suelen ajustar datos experimentales usando regresión no lineal minimizando el error cuadrático medio:</p>
+<div class="math notranslate nohighlight" id="equation-eq-ecm">
+<span class="eqno">(2)<a class="headerlink" href="#equation-eq-ecm" title="Link to this equation">#</a></span>\[ECM=\dfrac{1}{N}\sum_{i=1}^N(W_i-aS_i^b)^2\]</div>
+<p><a class="reference external" href="https://doi.org/10.1111/j.1095-8649.2011.03223.x">[Torres et al., 2012]</a> recoge que en experimentos realizados con peces planos de las familias Soleidae y Pleuronectidae los coeficientes de la ecuación (1) toman los siguientes valores:</p>
+<div class="math notranslate nohighlight">
+\[a\approx0,03\quad b\approx1,1-1,4\]</div>
+<p>habiendo estimado que en el caso concreto del lenguado estos coeficientes son: <span class="math notranslate nohighlight">\(a=0.024\quad b=1.32\)</span></p>
+<p>Los recientes estudios de <a class="reference external" href="https://doi.org/10.21608/ejabf.2023.322449">[El-Bokhty et al., 2023]</a> ponen en entredicho la ecuación (1) y sugieren que el crecimiento alométrico positivo del lenguado común (<em>Solea solea</em>) responde a la variable morfológica de longitud (<span class="math notranslate nohighlight">\(L\)</span>) que se ajusta a la expresión matemática:</p>
+<div class="math notranslate nohighlight" id="equation-eq-peso-longitud">
+<span class="eqno">(3)<a class="headerlink" href="#equation-eq-peso-longitud" title="Link to this equation">#</a></span>\[W=a\cdot L^b\]</div>
+<p>Concluyendo, en sus trabajos, que los coeficientes de dicha expresión son:</p>
+<div class="math notranslate nohighlight">
+\[a\approx0,00029\quad b\approx3,3777\]</div>
+<p>Sin embargo, una investigación realizada en las aguas costeras de Pakistán analizó seis especies de peces planos y encontró variaciones significativas en parámetros como la longitud, la anchura y el peso entre las diferentes especies <a class="reference external" href="https://doi.org/10.19080/OFOAJ.2021.14.555884">[W. Ali et al., 2021]</a>.  Aunque este estudio no presentó una fórmula específica que relacione el peso con la longitud y la anchura simultáneamente, sugiere que la anchura es una medida morfológica relevante en la evaluación de las relaciones morfométricas en peces planos. Ambas variables podrían relacionarse mediante la siguiente expresión matemática:</p>
+<div class="math notranslate nohighlight" id="equation-eq-peso-longitud-anchura">
+<span class="eqno">(4)<a class="headerlink" href="#equation-eq-peso-longitud-anchura" title="Link to this equation">#</a></span>\[W=k\cdot L^a \cdot A^b\]</div>
+<p>en donde:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(W\)</span> = peso,</p></li>
+<li><p><span class="math notranslate nohighlight">\(L\)</span> = longitud,</p></li>
+<li><p><span class="math notranslate nohighlight">\(A\)</span> = anchura,</p></li>
+<li><p><span class="math notranslate nohighlight">\(k\)</span>, <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> = parámetros específicos por especie</p></li>
+</ul>
+<p>Por otro lado <a class="reference external" href="https://doi.org/0.1016/j.aqrep.2021.100676">[Freitas et al.,2021]</a> en sus trabajos con <em>Paralichthys olivaceus</em> (falso Halibut del japón) apuntán a que una relación volumétrica es más adecuada si se tiene en cuenta la comprensión dorsoventral. Esta parámetro morfológico actúa como un factor de corrección que hace que el volumen real sea <span class="math notranslate nohighlight">\(\approx70-80\%\)</span> de LxAxH, siendo concretamente de <span class="math notranslate nohighlight">\(0.72\)</span> en el Halibut. Según estos autores el peso de los peces de esta especie se ajustan a la siguiente fórmula:</p>
+<div class="math notranslate nohighlight">
+\[W=1,05\cdot V^{0,98}\]</div>
+<p>que responde a la expresión matemática genérica:</p>
+<div class="math notranslate nohighlight" id="equation-eq-peso-volumen">
+<span class="eqno">(5)<a class="headerlink" href="#equation-eq-peso-volumen" title="Link to this equation">#</a></span>\[W=a\cdot (c\cdot V)^b\]</div>
+<p>en donde:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(W\)</span> = peso,</p></li>
+<li><p><span class="math notranslate nohighlight">\(V\)</span> = volumen obtenido como <span class="math notranslate nohighlight">\(L\cdot A \cdot H\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(L\)</span> = longitud,</p></li>
+<li><p><span class="math notranslate nohighlight">\(A\)</span> = anchura,</p></li>
+<li><p><span class="math notranslate nohighlight">\(H\)</span> = altura,</p></li>
+<li><p><span class="math notranslate nohighlight">\(c\)</span> = factor de corrección <span class="math notranslate nohighlight">\(\leq 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> = parámetros específicos por especie</p></li>
+</ul>
+<p><a class="reference external" href="https://doi.org/0.1007/s12562-019-01287-2">[Lee et al., 2019]</a> usaron un escáner 3D para medir el volumen real en <em>Scophthalmus maximus</em> (Rodaballo) encontrando que el peso de los ejemplares del estudio se ajustan a la expresión:</p>
+<div class="math notranslate nohighlight">
+\[W=1,12\cdot V-3,25\quad(R^{2}=0,96)\]</div>
+</section>
+<section id="analisis-de-modelos-peso-morfologia">
+<h2>Análisis de modelos peso - morfología<a class="headerlink" href="#analisis-de-modelos-peso-morfologia" title="Link to this heading">#</a></h2>
+<p>Se dispone de un dataset <code class="docutils literal notranslate"><span class="pre">Dimensiones_lenguado.xls</span></code> con N=200 registros morfométricos de alevines de lenguado, que incluye medidas de longitud, anchura, altura y peso. Considerando la diversidad de enfoques existentes en la literatura científica, se plantea la evaluación comparativa de distintas expresiones matemáticas que describan la relación entre el peso y las variables morfológicas. En particular, se estudiarán modelos clásicos basados en la relación <span class="math notranslate nohighlight">\(W = a \cdot L^b\)</span>, <span class="math notranslate nohighlight">\(W = a \cdot S^b\)</span> así como formulaciones extendidas que incorporan múltiples dimensiones corporales, como <span class="math notranslate nohighlight">\(W = k \cdot L^a \cdot A^b \cdot H^c\)</span>, con el objetivo de determinar cuál de estas expresiones proporciona un ajuste más preciso a los datos observados. La selección del modelo óptimo se basará en criterios estadísticos de bondad de ajuste y parsimonia, tales como el coeficiente de determinación ajustado (R² ajustado), el error cuadrático medio (RMSE).
+Los diferentes modelos de ajuste evaluados fueron ejecutados en un entorno Jupyterlab haciendo uso de librerías python especializadas como: pandas, numpy y scikit-learn.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cargar librerias necesarias</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LinearRegression</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">r2_score</span><span class="p">,</span> <span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">mean_absolute_error</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">curve_fit</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;seaborn-v0_8-muted&#39;</span><span class="p">)</span>
+
+<span class="c1"># Cargar el dataset</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="s1">&#39;./data/Dimensiones_lenguado.xlsx&#39;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Peso (g)</th>
+      <th>Longitud (cm)</th>
+      <th>Anchura (cm)</th>
+      <th>Altura (cm)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.46</td>
+      <td>3.3</td>
+      <td>1.3</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.08</td>
+      <td>4.5</td>
+      <td>1.1</td>
+      <td>0.3</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.67</td>
+      <td>3.9</td>
+      <td>1.5</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.98</td>
+      <td>4.4</td>
+      <td>1.7</td>
+      <td>0.3</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.93</td>
+      <td>4.2</td>
+      <td>1.8</td>
+      <td>0.3</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Definimos variables comunes</span>
+<span class="n">L</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Longitud (cm)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Anchura (cm)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">H</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Altura (cm)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">W</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Peso (g)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">S</span> <span class="o">=</span> <span class="n">L</span> <span class="o">*</span> <span class="n">A</span>
+<span class="n">V</span> <span class="o">=</span> <span class="n">L</span> <span class="o">*</span> <span class="n">A</span> <span class="o">*</span> <span class="n">H</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">W</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="modelo-potencia-peso-longitud-w-a-cdot-l-b">
+<h3>1. Modelo potencia peso - longitud: <span class="math notranslate nohighlight">\(W=a\cdot L^b\)</span><a class="headerlink" href="#modelo-potencia-peso-longitud-w-a-cdot-l-b" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">long_model</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">*</span><span class="n">L</span><span class="o">**</span><span class="n">b</span>
+
+<span class="n">params_long</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">long_model</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">W</span><span class="p">)</span>
+<span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="o">=</span> <span class="n">params_long</span>
+<span class="n">W_pred_long</span> <span class="o">=</span> <span class="n">long_model</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<span class="n">r2_long</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">W</span><span class="p">,</span> <span class="n">W_pred_long</span><span class="p">)</span>
+<span class="n">r2_adj_long</span><span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">r2_long</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">rmse_long</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">W</span><span class="p">,</span> <span class="n">W_pred_long</span><span class="p">))</span>
+<span class="n">mae_long</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">W</span><span class="p">,</span> <span class="n">W_pred_long</span><span class="p">)</span>
+
+<span class="c1"># Visualización ajuste</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">W</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Datos reales&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">L_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">L</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">L</span><span class="p">),</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">L_range</span><span class="p">,</span> <span class="n">long_model</span><span class="p">(</span><span class="n">L_range</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">),</span> <span class="s1">&#39;r-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> 
+         <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Modelo: W = </span><span class="si">{</span><span class="n">a</span><span class="si">:</span><span class="s1">.5f</span><span class="si">}</span><span class="s1">·L^</span><span class="si">{</span><span class="n">b</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="se">\n</span><span class="s1">R² = </span><span class="si">{</span><span class="n">r2_long</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Longitud - L (cm)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Peso (g)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Relación Peso-Longitud del Lenguado&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Resultados del ajuste</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Modelo ajustado: W = </span><span class="si">{</span><span class="n">a</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2"> · L^</span><span class="si">{</span><span class="n">b</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;R² = </span><span class="si">{</span><span class="n">r2_long</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;MAE = </span><span class="si">{</span><span class="n">mae_long</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> g&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;RSME = </span><span class="si">{</span><span class="n">rmse_long</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> g&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;R² adj = </span><span class="si">{</span><span class="n">r2_adj_long</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> g&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/cd93ee3a6cbf97b8b73af60d203b3fcf99b2cee4278716235e1c4f894ce56463.png" src="../../_images/cd93ee3a6cbf97b8b73af60d203b3fcf99b2cee4278716235e1c4f894ce56463.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Modelo ajustado: W = 0.00933 · L^3.13480
+R² = 0.9433
+MAE = 0.5246 g
+RSME = 0.8638 g
+R² adj = 0.9430 g
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="modelo-potencia-peso-superficie-w-a-cdot-s-b">
+<h3>2. Modelo potencia peso - superficie: <span class="math notranslate nohighlight">\(W=a\cdot S^b\)</span><a class="headerlink" href="#modelo-potencia-peso-superficie-w-a-cdot-s-b" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">potencia_model</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="p">(</span><span class="n">S</span><span class="o">**</span><span class="n">b</span><span class="p">)</span>
+
+<span class="n">params_pow</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">potencia_model</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">W</span><span class="p">)</span>
+<span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="o">=</span> <span class="n">params_pow</span>
+<span class="n">W_pred_pow</span> <span class="o">=</span> <span class="n">potencia_model</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="n">r2_pow</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">W</span><span class="p">,</span> <span class="n">W_pred_pow</span><span class="p">)</span>
+<span class="n">r2_adj_pow</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">r2_pow</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">rmse_pow</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">W</span><span class="p">,</span> <span class="n">W_pred_pow</span><span class="p">))</span>
+<span class="n">mae_pow</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">W</span><span class="p">,</span> <span class="n">W_pred_pow</span><span class="p">)</span>
+
+<span class="c1"># Visualización ajuste</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">W</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Datos reales&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">S_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">S</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">S</span><span class="p">),</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">S_range</span><span class="p">,</span> <span class="n">long_model</span><span class="p">(</span><span class="n">S_range</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">),</span> <span class="s1">&#39;g-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> 
+         <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Modelo: W = </span><span class="si">{</span><span class="n">a</span><span class="si">:</span><span class="s1">.5f</span><span class="si">}</span><span class="s1">·S^</span><span class="si">{</span><span class="n">b</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="se">\n</span><span class="s1">R² = </span><span class="si">{</span><span class="n">r2_pow</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Superficie - S (cm²)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Peso (g)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Relación Peso-Superficie del Lenguado&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Resultados del ajuste</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Modelo ajustado: W = </span><span class="si">{</span><span class="n">a</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2"> · S^</span><span class="si">{</span><span class="n">b</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;R² = </span><span class="si">{</span><span class="n">r2_pow</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;MAE = </span><span class="si">{</span><span class="n">mae_pow</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> g&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;RSME = </span><span class="si">{</span><span class="n">rmse_pow</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> g&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;R² adj = </span><span class="si">{</span><span class="n">r2_adj_pow</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> g&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/f600f3af553e158ff9e2319af58a3c9d7ea073610f44bfb924479896bdd89195.png" src="../../_images/f600f3af553e158ff9e2319af58a3c9d7ea073610f44bfb924479896bdd89195.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Modelo ajustado: W = 0.06247 · S^1.43623
+R² = 0.9733
+MAE = 0.3734 g
+RSME = 0.5925 g
+R² adj = 0.9732 g
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/01"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Introduccion.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Predicción del peso del lenguado a partir de variables morfológicas</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Generador.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Generador</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#justificacion-matematica-y-biologica">Justificación matemática y biológica</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-modelos-peso-morfologia">Análisis de modelos peso - morfología</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-potencia-peso-longitud-w-a-cdot-l-b">1. Modelo potencia peso - longitud: <span class="math notranslate nohighlight">\(W=a\cdot L^b\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-potencia-peso-superficie-w-a-cdot-s-b">2. Modelo potencia peso - superficie: <span class="math notranslate nohighlight">\(W=a\cdot S^b\)</span></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Javier Álvarez Osuna
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright Feeding Systems S.L. - GNU General Public License 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
